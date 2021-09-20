@@ -1,4 +1,6 @@
 https://github.com/whirligigY/fast-company
+
+
 ##Project name: Fast company for the evening
 
 The project implements the functionality of finding a quick company of friends for the evening on React. You can find friends based on their ratings by other people, search by profession, sort by ratings, names, add to favorites.
