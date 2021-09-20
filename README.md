@@ -1,3 +1,9 @@
+##Project name: Fast company for the evening
+
+The project implements the functionality of finding a quick company of friends for the evening on React. You can find friends based on their ratings by other people, search by profession, sort by ratings, names, add to favorites.
+
+Technologies used - React (created through create-react-app)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
