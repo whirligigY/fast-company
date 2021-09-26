@@ -7,8 +7,9 @@ import GroupList from "./groupList";
 import api from "../api";
 import UsersTable from "./usersTable";
 import _ from "lodash";
+import UserPage from "./userPage";
 
-const Users = () => {
+const Users = ({ match }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [professions, setProfessions] = useState();
   const [selectedProf, setSelectedProf] = useState();
@@ -18,6 +19,8 @@ const Users = () => {
   });
   const pageSize = 8;
   const [users, setUsers] = useState();
+  const userSearchId = match.params.userId;
+
   useEffect(() => {
     api.users.fetchAll().then((data) => setUsers(data));
   }, []);
@@ -50,7 +53,10 @@ const Users = () => {
   const handleSort = (item) => {
     setSortBy(item);
   };
-  if (users) {
+  if (users && userSearchId) {
+    return <UserPage id={userSearchId} />;
+  }
+  if (users && !userSearchId) {
     const filteredUsers = selectedProf
       ? users.filter(
           (user) =>
@@ -103,7 +109,7 @@ const Users = () => {
       </div>
     );
   }
-  return "loading ...";
+  return "loading...";
 };
 Users.propTypes = {
   users: PropTypes.array,
